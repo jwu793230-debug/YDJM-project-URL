@@ -1,0 +1,6 @@
+assets/** -text
+hikisc/** -text
+yindajimin/cesium/** -text
+yindajimin/drone-3d/** -text
+*.html text eol=lf
+*.md text eol=lf

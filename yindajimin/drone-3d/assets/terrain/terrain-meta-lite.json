@@ -1,0 +1,16 @@
+{
+  "width": 257,
+  "height": 257,
+  "imageryWidth": 2048,
+  "imageryHeight": 2048,
+  "west": 102.18,
+  "east": 102.2265,
+  "south": 29.965,
+  "north": 30.02,
+  "minimumHeight": 1313,
+  "maximumHeight": 2698,
+  "source": "SRTM 1 Arc-Second / AWS Terrain Tiles",
+  "sourceResolution": "SRTM约30m；257×257为轻量显示采样",
+  "verticalDatumNote": "SRTM orthometric height; 720 panorama GPS altitude datum to be verified",
+  "runtimeProfile": "aerial-lite"
+}

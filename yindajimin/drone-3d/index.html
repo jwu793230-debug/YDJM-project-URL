@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <title>引大济岷二郎山 · 无人机航拍三维模型</title>
+ <link rel="icon" href="data:,">
+ <link rel="stylesheet" href="./assets/vendor/cesium/Widgets/widgets.css">
+ <link rel="stylesheet" href="./assets/project-map.css?v=aerial-context-20260908">
+</head>
+<body>
+        <main class="project-map-frame" data-fullscreen="false" data-scene-mode="aerial-context" aria-label="二郎山无人机航拍三维模型">
+          <div id="cesiumContainer" aria-label="二郎山无人机航拍三维地形"></div>
+          <div class="map-identity"><strong>引大济岷 · 二郎山</strong><span>无人机航拍三维模型</span></div>
+          <div class="map-status" id="mapStatus" data-state="loading">正在加载轻量三维航拍底图</div>
+
+          <div class="map-toolbar" aria-label="地图工具">
+            <a class="map-tool-button" id="openProjectPanoramaLink" href="https://roma.720yun.com/vr/f0b1e9f1dc32d20f/" target="_blank" rel="noopener noreferrer">720云全景 ↗</a>
+            <button class="map-tool-button" id="resetMapViewButton" type="button">复位视角</button>
+            <button class="map-tool-button" id="toggleMapFullscreenButton" type="button" aria-pressed="false">全屏地图</button>
+          </div>
+
+          <div class="panorama-portal-tether" id="panoramaPortalTether" aria-hidden="true"></div>
+          <div class="panorama-portal-anchor" id="panoramaPortalAnchor" aria-hidden="true"></div>
+
+          <article
+            class="spatial-panorama-portal"
+            id="spatialPanoramaPortal"
+            data-open="false"
+            data-expanded="false"
+            data-mode="live"
+            data-sync-state="idle"
+            data-yaw="315"
+            data-pitch="0"
+            aria-label="航拍全景与三维地图联动窗口"
+          >
+            <div class="panorama-portal-halo" aria-hidden="true"></div>
+            <div class="panorama-visual">
+              <iframe
+                class="spatial-panorama-iframe"
+                id="spatialPanoramaIframe"
+                src="about:blank"
+                title="引大济岷前期施工场地720云全景影像"
+                allow="fullscreen; accelerometer; gyroscope"
+                referrerpolicy="strict-origin-when-cross-origin"
+              ></iframe>
+              <div class="panorama-tone" aria-hidden="true"></div>
+            </div>
+
+            <div class="panorama-portal-bar">
+              <strong class="panorama-portal-title" id="panoramaPortalTitle">航拍点全景</strong>
+              <div class="panorama-portal-tools">
+                <button class="panorama-tool" id="panoramaExpandButton" type="button" aria-label="展开全景窗口">展开</button>
+                <button class="panorama-tool" id="panoramaCloseButton" type="button" aria-label="关闭全景窗口">×</button>
+              </div>
+            </div>
+
+            <div class="panorama-portal-footer">
+              <span class="panorama-sync-status" id="panoramaSyncStatus">真实720 · 点击航拍点直接定位</span>
+            </div>
+          </article>
+
+          <div class="map-legend" aria-label="地图图层控制">
+            <button class="legend-item" type="button" data-map-layer="panorama-points" aria-pressed="true"><i class="legend-dot"></i>航拍点</button>
+            <button class="legend-item" type="button" data-map-layer="panorama-route" aria-pressed="true"><i class="legend-line"></i>航拍点分布</button>
+            <button class="legend-item" type="button" data-map-layer="water" aria-pressed="true"><i class="legend-swatch is-water"></i>水体</button>
+            <button class="legend-item" type="button" data-map-layer="road" aria-pressed="true"><i class="legend-swatch is-road"></i>道路</button>
+            <button class="legend-item" type="button" data-map-layer="bridge" aria-pressed="true"><i class="legend-swatch is-bridge"></i>桥梁</button>
+            <button class="legend-item" type="button" data-map-layer="portal-outline" aria-pressed="true"><i class="legend-swatch is-portal"></i>洞口范围</button>
+          </div>
+
+          <div class="map-point-strip" id="mapPointStrip" aria-label="航拍点快速定位"></div>
+        </main>
+ <script>window.CESIUM_BASE_URL="./assets/vendor/cesium/";</script>
+ <script src="./assets/vendor/cesium/Cesium.js"></script>
+ <script type="module" src="./assets/aerial-map.mjs?v=home-07-to-01-20260909-r2"></script>
+</body>
+</html>
